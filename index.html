@@ -458,24 +458,18 @@
       </div>
 
       <!-- ─── STEP 3: Payment ─── -->
-      <span class="form-section-label">03 — Payment</span>
+      <span class="form-section-label">03 — Secure Payment</span>
 
-      <!-- 🔶 GHL EMBED ZONE -->
-<a 
-  class="pay-submit"
-  href="https://api.leadconnectorhq.com/widget/form/dTNJBrIlPd6u6pSmm5fY"
-  target="_blank">
-  Complete Order →
-</a>
-      <!-- OR if using Stripe Payment Links instead: -->
-      <!-- <div class="stripe-zone">
-        <span class="stripe-zone-label">🔒 Secure Payment</span>
-        <div class="stripe-card-mock">Card details collected via Stripe <span>🔒 SSL</span></div>
-        <p class="stripe-note">🔒 256-bit SSL encryption. Your data is safe.</p>
-      </div> -->
+      <div style="background:var(--surface2); border:0.5px solid var(--border); border-radius:4px; padding:1.25rem 1.5rem; margin-bottom:1rem;">
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
+          <span style="font-size:1.1rem;">🔒</span>
+          <span style="font-size:12px; color:var(--warm-white); font-weight:500;">Secure Checkout via FastPayDirect</span>
+        </div>
+        <p style="font-size:12px; color:var(--muted); line-height:1.6;">Clicking the button below will take you to our secure payment page. Your info is submitted first so we can start your onboarding automatically.</p>
+      </div>
 
-      <button class="pay-submit" onclick="handleSubmit()">
-        Complete Order →
+      <button class="pay-submit" id="pay-submit-btn" onclick="handleSubmit()">
+        Proceed to Secure Payment →
       </button>
 
       <p class="pay-legal">
@@ -496,6 +490,14 @@
 </div><!-- end #payment-page -->
 
 <script>
+  // ── Payment Links ──
+  const paymentLinks = {
+    starter:    'https://link.fastpaydirect.com/payment-link/6a16e4a2c3ea3a19f0bd8aff',
+    foundation: 'https://link.fastpaydirect.com/payment-link/6a16e57af4e3f699673a5e6f',
+    growth:     'YOUR_GROWTH_PAYMENT_LINK_HERE',
+    operator:   'YOUR_OPERATOR_PAYMENT_LINK_HERE'
+  };
+
   // ── Package data ──
   const pkgs = {
     starter: {
@@ -559,43 +561,33 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // Track which package is currently open
+  let currentPkg = 'starter';
+
   function handleSubmit() {
     const fname = document.getElementById('f-fname').value.trim();
     const email = document.getElementById('f-email').value.trim();
-    if (!fname || !email) { alert('Please fill in your name and email to continue.'); return; }
+    const phone = document.getElementById('f-phone').value.trim();
+    if (!fname || !email) { alert('Please fill in at least your name and email to continue.'); return; }
 
-    // ── Send to GHL webhook ──
-    // REPLACE the URL below with your GHL workflow webhook URL
-    // In GHL: Automation → Workflows → + New → Trigger: Webhook → copy URL
-    const GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL_HERE';
+    const pkg = document.getElementById('f-package').value;
+    const link = paymentLinks[pkg];
 
-    const payload = {
-      firstName: fname,
-      lastName: document.getElementById('f-lname').value.trim(),
-      email: email,
-      phone: document.getElementById('f-phone').value.trim(),
-      businessName: document.getElementById('f-biz').value.trim(),
-      package: document.getElementById('f-package').value,
-      starterService: document.getElementById('f-starter-service').value,
-      notes: document.getElementById('f-notes').value.trim(),
-      source: 'Be Abundant Landing Page',
-      submittedAt: new Date().toISOString()
-    };
-
-    // Fire & forget — show success regardless so UX isn't blocked
-    // (if using GHL embed form instead, remove this fetch and let GHL handle it)
-    if (GHL_WEBHOOK_URL !== 'YOUR_GHL_WEBHOOK_URL_HERE') {
-      fetch(GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).catch(e => console.warn('Webhook error:', e));
+    if (!link || link.includes('YOUR_')) {
+      alert('Payment link for this package isn\'t set up yet. Please contact us directly!');
+      return;
     }
 
-    // Show success
-    document.getElementById('checkout-form-box').style.display = 'none';
-    document.getElementById('success-screen').style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Build URL with prefilled contact info so FastPayDirect/GHL can capture the lead
+    // FastPayDirect supports query params: ?first_name=&last_name=&email=&phone=
+    const url = new URL(link);
+    url.searchParams.set('first_name', fname);
+    url.searchParams.set('last_name', document.getElementById('f-lname').value.trim());
+    url.searchParams.set('email', email);
+    if (phone) url.searchParams.set('phone', phone);
+
+    // Redirect to payment page
+    window.location.href = url.toString();
   }
 </script>
 </body>
