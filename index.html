@@ -16,41 +16,36 @@
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--warm-white); font-family: var(--sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
-  /* ── NAV ── */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(17,16,9,0.95); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border); }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(17,16,9,0.95); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--border); }
   .nav-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--warm-white); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { font-size: 12px; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
-  .nav-cta { font-size: 13px; font-weight: 500; color: var(--bg); background: var(--gold); padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; }
+  .nav-cta { font-size: 13px; font-weight: 500; color: var(--bg); background: var(--gold); padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; font-family: var(--sans); }
   .nav-cta:hover { background: var(--gold-light); }
 
-  /* ── SHARED ── */
+  /* SHARED */
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
   @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-  .btn-gold { display: inline-block; padding: 0.9rem 2.2rem; background: var(--gold); color: var(--bg); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; border-radius: 2px; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; }
+  .btn-gold { display: inline-block; padding: 0.9rem 2.2rem; background: var(--gold); color: var(--bg); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.04em; border-radius: 2px; transition: background 0.2s, transform 0.15s; cursor: pointer; border: none; font-family: var(--sans); }
   .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
-  .btn-ghost { display: inline-block; padding: 0.9rem 2.2rem; color: var(--warm-white); text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 0.04em; border-radius: 2px; border: 0.5px solid var(--border); transition: border-color 0.2s, transform 0.15s; cursor: pointer; background: none; }
+  .btn-ghost { display: inline-block; padding: 0.9rem 2.2rem; color: var(--warm-white); text-decoration: none; font-size: 14px; font-weight: 300; letter-spacing: 0.04em; border-radius: 2px; border: 0.5px solid var(--border); transition: border-color 0.2s, transform 0.15s; cursor: pointer; background: none; font-family: var(--sans); }
   .btn-ghost:hover { border-color: var(--gold); transform: translateY(-1px); }
-  .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block; }
   .section-h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; color: var(--warm-white); }
   .section-h2 em { font-style: italic; color: var(--gold); }
 
-  /* ── PAGE VISIBILITY ── */
   #main-page { display: block; }
   #payment-page { display: none; }
-
-  /* ══════════════════════════════
-     MAIN PAGE
-  ══════════════════════════════ */
 
   /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
   .hero-bg-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: var(--serif); font-size: 22vw; font-weight: 600; color: rgba(196,154,74,0.04); white-space: nowrap; pointer-events: none; z-index: 0; }
   .hero-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.7s 0.2s forwards; }
-  .hero h1 { font-family: var(--serif); font-size: clamp(4rem, 9vw, 8rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; color: var(--warm-white); max-width: 800px; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.8s 0.35s forwards; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 300; line-height: 0.98; letter-spacing: -0.02em; color: var(--warm-white); max-width: 800px; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.8s 0.35s forwards; }
   .hero h1 .gold { color: var(--gold); font-style: italic; }
-  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 520px; margin-top: 2rem; line-height: 1.8; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.8s 0.5s forwards; }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; margin-top: 2rem; line-height: 1.85; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.8s 0.5s forwards; }
   .hero-sub strong { color: var(--gold); font-weight: 400; }
   .hero-pillars { display: flex; gap: 2.5rem; margin-top: 2.5rem; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.8s 0.6s forwards; flex-wrap: wrap; }
   .pillar { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
@@ -58,15 +53,66 @@
   .pillar-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
   .hero-actions { display: flex; gap: 1rem; align-items: center; margin-top: 2.5rem; position: relative; z-index: 1; opacity:0; animation: fadeUp 0.8s 0.7s forwards; flex-wrap: wrap; }
 
+  /* STATS */
+  .stats { background: var(--surface2); padding: 3.5rem 4rem; border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; }
+  .stat-item { padding: 1.5rem 2rem; border-right: 0.5px solid var(--border); text-align: center; }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* WHAT IS AUTOMATION */
+  .explainer { padding: 5rem 4rem; background: var(--bg); }
+  .explainer-inner { max-width: 1100px; margin: 0 auto; }
+  .explainer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .explainer-text h2 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--warm-white); margin-bottom: 1rem; line-height: 1.1; }
+  .explainer-text h2 em { color: var(--gold); font-style: italic; }
+  .explainer-text p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+  .explainer-text p strong { color: var(--warm-white); font-weight: 400; }
+  .explainer-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .explainer-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 4px; padding: 1.25rem 1.5rem; display: flex; gap: 1rem; align-items: flex-start; transition: border-color 0.2s; }
+  .explainer-card:hover { border-color: var(--gold); }
+  .ex-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .ex-title { font-size: 14px; font-weight: 500; color: var(--warm-white); margin-bottom: 0.25rem; }
+  .ex-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* USE CASE */
+  .usecase { background: var(--surface); padding: 5rem 4rem; border-top: 0.5px solid var(--border); }
+  .usecase-inner { max-width: 1000px; margin: 0 auto; }
+  .usecase-head { text-align: center; margin-bottom: 3rem; }
+  .usecase-head h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 300; color: var(--warm-white); margin-bottom: 0.5rem; }
+  .usecase-head p { font-size: 14px; color: var(--muted); }
+  .story-box { background: var(--surface2); border: 0.5px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .story-tabs { display: flex; border-bottom: 0.5px solid var(--border); }
+  .story-tab { flex: 1; padding: 1rem; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: none; border: none; cursor: pointer; font-family: var(--sans); transition: all 0.2s; border-right: 0.5px solid var(--border); }
+  .story-tab:last-child { border-right: none; }
+  .story-tab.active { background: var(--surface); color: var(--gold); }
+  .story-content { display: none; padding: 2rem; }
+  .story-content.active { display: block; }
+  .story-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .story-biz { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--warm-white); margin-bottom: 1rem; }
+  .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .ba-col { padding: 1.25rem; border-radius: 3px; }
+  .ba-col.before { background: rgba(255,255,255,0.03); border: 0.5px solid rgba(255,255,255,0.06); }
+  .ba-col.after { background: rgba(196,154,74,0.06); border: 0.5px solid rgba(196,154,74,0.2); }
+  .ba-heading { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+  .ba-col.after .ba-heading { color: var(--gold); }
+  .ba-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .ba-col ul li { font-size: 13px; color: var(--muted); display: flex; gap: 0.5rem; align-items: flex-start; line-height: 1.5; }
+  .ba-col ul li::before { content: '✗'; color: rgba(255,100,100,0.5); flex-shrink: 0; }
+  .ba-col.after ul li::before { content: '✓'; color: var(--gold); }
+  .story-result { background: rgba(196,154,74,0.08); border-left: 2px solid var(--gold); padding: 0.85rem 1rem; font-size: 13px; color: var(--muted); border-radius: 0 3px 3px 0; }
+  .story-result strong { color: var(--gold); font-weight: 400; }
+
   /* STARTER */
-  .starter { background: var(--surface); padding: 5rem 4rem; border-top: 0.5px solid var(--border); }
+  .starter { background: var(--bg); padding: 5rem 4rem; border-top: 0.5px solid var(--border); }
   .starter-inner { max-width: 1100px; margin: 0 auto; }
   .starter-head { text-align: center; margin-bottom: 3rem; }
   .starter-rule { display: flex; align-items: center; gap: 1rem; justify-content: center; margin-bottom: 0.75rem; }
   .starter-rule::before, .starter-rule::after { content: ''; flex: 1; max-width: 80px; height: 0.5px; background: var(--gold); }
   .starter-rule span { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
   .starter-head h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 300; color: var(--warm-white); margin-bottom: 0.5rem; }
-  .starter-head p { color: var(--muted); font-size: 14px; }
+  .starter-head p { color: var(--muted); font-size: 14px; max-width: 540px; margin: 0 auto; line-height: 1.75; }
   .starter-head p strong { color: var(--gold); font-weight: 400; }
   .starter-layout { display: grid; grid-template-columns: 220px 1fr; gap: 0; align-items: stretch; background: var(--surface2); border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden; }
   .starter-price-col { background: linear-gradient(160deg, #2A2318, #1A1712); padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; justify-content: center; border-right: 0.5px solid var(--border); }
@@ -79,11 +125,29 @@
   .starter-services-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
   .starter-services-label strong { color: var(--gold); }
   .starter-options { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-  .starter-option { background: var(--surface); border: 0.5px solid var(--border); border-radius: 3px; padding: 1.25rem 1rem; text-align: center; transition: border-color 0.2s; cursor: default; }
-  .starter-option:hover { border-color: var(--gold); }
+  .starter-option { background: var(--surface); border: 0.5px solid var(--border); border-radius: 3px; padding: 1.25rem 1rem; text-align: center; transition: border-color 0.2s, background 0.2s; cursor: pointer; position: relative; }
+  .starter-option:hover { border-color: var(--gold); background: rgba(196,154,74,0.05); }
   .s-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
   .s-name { font-size: 12px; font-weight: 500; color: var(--warm-white); margin-bottom: 0.4rem; }
   .s-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+  /* Tooltip */
+  .tooltip-wrap { position: relative; display: inline-block; }
+  .tooltip-pop {
+    display: none; position: fixed; z-index: 999;
+    background: var(--surface2); border: 0.5px solid var(--gold);
+    border-radius: 4px; padding: 1rem 1.25rem; width: 240px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    pointer-events: none;
+  }
+  .tooltip-pop.visible { display: block; }
+  .tooltip-pop h4 { font-size: 13px; font-weight: 500; color: var(--gold); margin-bottom: 0.4rem; }
+  .tooltip-pop p { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .tooltip-pop ul { list-style: none; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; }
+  .tooltip-pop ul li { font-size: 11.5px; color: rgba(247,244,238,0.65); display: flex; gap: 0.4rem; }
+  .tooltip-pop ul li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+  .tooltip-tip { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); opacity: 0.5; margin-top: 0.6rem; display: block; }
+
   .starter-bottom { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 1.5rem; border: 0.5px solid var(--border); border-radius: 3px; overflow: hidden; }
   .starter-benefit { padding: 1.25rem 1.5rem; background: var(--surface2); border-right: 0.5px solid var(--border); }
   .starter-benefit:last-child { border-right: none; }
@@ -91,7 +155,7 @@
   .sb-text { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
   /* PACKAGES */
-  .packages { padding: 6rem 4rem; background: var(--bg); }
+  .packages { padding: 6rem 4rem; background: var(--surface); border-top: 0.5px solid var(--border); }
   .packages-head { text-align: center; margin-bottom: 3.5rem; }
   .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 0.5px solid var(--border); max-width: 1100px; margin: 0 auto; }
   .pkg-card { background: var(--surface); padding: 2.5rem 2rem; position: relative; }
@@ -105,44 +169,42 @@
   .pkg-divider { height: 0.5px; background: var(--border); margin-bottom: 1.5rem; }
   .feat-group { margin-bottom: 1.25rem; }
   .feat-group-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.6rem; opacity: 0.7; }
+  /* Clickable features */
   .feat-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
-  .feat-list li { font-size: 13px; color: rgba(247,244,238,0.7); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.5; }
+  .feat-list li { font-size: 13px; color: rgba(247,244,238,0.7); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.5; cursor: pointer; transition: color 0.15s; border-radius: 2px; padding: 1px 3px; }
+  .feat-list li:hover { color: var(--gold); }
   .feat-list li::before { content: '✓'; color: var(--gold); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+  .feat-list li .feat-note { font-size: 10px; color: var(--gold); opacity: 0.6; margin-left: auto; flex-shrink: 0; margin-top: 2px; font-style: italic; white-space: nowrap; }
   .pkg-btn { display: block; width: 100%; text-align: center; padding: 0.75rem 1.5rem; font-size: 13px; font-weight: 400; letter-spacing: 0.04em; text-decoration: none; border-radius: 2px; transition: all 0.2s; border: 0.5px solid var(--border); color: var(--warm-white); background: transparent; margin-top: 2rem; cursor: pointer; font-family: var(--sans); }
   .pkg-btn:hover { border-color: var(--gold); color: var(--gold); }
   .pkg-card.featured .pkg-btn { background: var(--gold); border-color: var(--gold); color: var(--bg); font-weight: 500; }
   .pkg-card.featured .pkg-btn:hover { background: var(--gold-light); }
 
   /* WHY */
-  .why { background: var(--surface); padding: 5rem 4rem; border-top: 0.5px solid var(--border); }
+  .why { background: var(--bg); padding: 5rem 4rem; border-top: 0.5px solid var(--border); }
   .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 3rem; background: var(--border); }
-  .why-card { padding: 2rem 1.75rem; background: var(--surface); }
+  .why-card { padding: 2rem 1.75rem; background: var(--bg); }
   .why-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: var(--gold); opacity: 0.35; line-height: 1; margin-bottom: 0.75rem; }
   .why-card h4 { font-size: 14px; font-weight: 500; color: var(--warm-white); margin-bottom: 0.4rem; }
   .why-card p { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
 
   /* CTA */
-  .cta-section { background: var(--bg); text-align: center; padding: 6rem 4rem; border-top: 0.5px solid var(--border); }
+  .cta-section { background: var(--surface); text-align: center; padding: 6rem 4rem; border-top: 0.5px solid var(--border); }
   .cta-section .section-h2 { max-width: 600px; margin: 0.75rem auto 1rem; }
-  .cta-section p { color: var(--muted); margin-bottom: 2rem; font-size: 15px; }
-  .cta-section p strong { color: var(--gold); font-weight: 400; }
+  .cta-section > p { color: var(--muted); margin-bottom: 2rem; font-size: 15px; }
+  .cta-section > p strong { color: var(--gold); font-weight: 400; }
   .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .cta-urgency { font-size: 12px; color: var(--muted); margin-top: 1.25rem; }
   .cta-urgency strong { color: var(--gold); font-weight: 400; }
 
   /* FOOTER */
-  footer { background: var(--surface); color: var(--muted); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 12px; flex-wrap: wrap; gap: 1rem; border-top: 0.5px solid var(--border); }
+  footer { background: var(--surface2); color: var(--muted); padding: 2rem 4rem; display: flex; justify-content: space-between; align-items: center; font-size: 12px; flex-wrap: wrap; gap: 1rem; border-top: 0.5px solid var(--border); }
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--gold); }
 
-  /* ══════════════════════════════
-     PAYMENT PAGE
-  ══════════════════════════════ */
+  /* PAYMENT PAGE */
   #payment-page { animation: fadeIn 0.4s ease; }
-
   .pay-wrap { min-height: 100vh; padding: 7rem 4rem 4rem; display: grid; grid-template-columns: 1fr 420px; gap: 3rem; max-width: 1100px; margin: 0 auto; align-items: start; }
-
-  /* Left — order summary */
   .pay-summary { position: sticky; top: 7rem; }
   .pay-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); cursor: pointer; margin-bottom: 2rem; transition: color 0.2s; background: none; border: none; font-family: var(--sans); }
   .pay-back:hover { color: var(--gold); }
@@ -152,14 +214,12 @@
   .pay-pkg-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; max-width: 420px; }
   .pay-price-box { background: var(--surface2); border: 0.5px solid var(--border); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.5rem; }
   .pay-price-row { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); font-size: 13.5px; color: var(--muted); }
-  .pay-price-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .pay-price-row:last-child { border-bottom: none; }
   .pay-price-row.total { color: var(--warm-white); font-size: 15px; }
   .pay-price-row.total strong { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; color: var(--gold); }
   .pay-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
   .pay-features li { font-size: 13px; color: rgba(247,244,238,0.65); display: flex; gap: 0.6rem; align-items: flex-start; }
   .pay-features li::before { content: '✓'; color: var(--gold); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
-
-  /* Right — checkout form */
   .pay-form-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 4px; padding: 2.5rem 2rem; }
   .pay-form-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--warm-white); margin-bottom: 0.3rem; }
   .pay-form-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 2rem; line-height: 1.6; }
@@ -168,46 +228,26 @@
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.75rem; }
   .form-group label { font-size: 11px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; }
-  .form-group input,
-  .form-group select,
-  .form-group textarea { background: var(--surface2); border: 0.5px solid var(--border); border-radius: 2px; padding: 0.7rem 0.9rem; font-size: 14px; color: var(--warm-white); font-family: var(--sans); font-weight: 300; outline: none; transition: border-color 0.2s; width: 100%; }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group input, .form-group select, .form-group textarea { background: var(--surface2); border: 0.5px solid var(--border); border-radius: 2px; padding: 0.7rem 0.9rem; font-size: 14px; color: var(--warm-white); font-family: var(--sans); font-weight: 300; outline: none; transition: border-color 0.2s; width: 100%; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
   .form-group select option { background: var(--surface2); }
   .form-group textarea { resize: vertical; min-height: 80px; }
-
-  /* GHL Embed zone */
-  .ghl-embed-zone { background: var(--surface2); border: 1px dashed rgba(196,154,74,0.3); border-radius: 4px; padding: 2rem; text-align: center; margin: 1.5rem 0; }
-  .ghl-embed-zone p { font-size: 12px; color: var(--muted); line-height: 1.7; }
-  .ghl-embed-zone code { font-size: 11px; color: var(--gold); background: rgba(196,154,74,0.08); padding: 2px 6px; border-radius: 2px; }
-
-  /* Stripe zone */
-  .stripe-zone { background: var(--surface2); border: 1px dashed rgba(196,154,74,0.3); border-radius: 4px; padding: 1.5rem; margin: 1.5rem 0; }
-  .stripe-zone-label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block; }
-  .stripe-card-mock { background: var(--surface); border: 0.5px solid var(--border); border-radius: 3px; padding: 0.8rem 1rem; font-size: 13px; color: var(--muted); display: flex; align-items: center; justify-content: space-between; }
-  .stripe-card-mock span { font-size: 11px; }
-  .stripe-note { font-size: 11px; color: var(--muted); margin-top: 0.6rem; display: flex; align-items: center; gap: 0.4rem; }
-
   .pay-submit { width: 100%; padding: 1rem; background: var(--gold); color: var(--bg); border: none; border-radius: 2px; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; cursor: pointer; font-family: var(--sans); transition: background 0.2s, transform 0.15s; margin-top: 1.5rem; }
   .pay-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
   .pay-legal { font-size: 11px; color: var(--muted); text-align: center; margin-top: 1rem; line-height: 1.6; }
   .pay-legal a { color: var(--gold); text-decoration: none; }
-
-  /* Success screen */
   #success-screen { display: none; text-align: center; padding: 5rem 2rem; animation: fadeIn 0.4s ease; }
   .success-icon { font-size: 3rem; margin-bottom: 1rem; }
   .success-title { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: var(--warm-white); margin-bottom: 0.75rem; }
   .success-title em { color: var(--gold); font-style: italic; }
   .success-sub { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto 2rem; line-height: 1.8; }
 
-  /* Mobile */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .hero, .starter, .packages, .why, .cta-section { padding: 4rem 1.5rem; }
+    .hero, .explainer, .usecase, .starter, .packages, .why, .cta-section, .stats { padding: 4rem 1.5rem; }
     .hero { padding-top: 7rem; }
-    .packages-grid, .why-grid { grid-template-columns: 1fr; }
+    .stats-grid, .packages-grid, .why-grid, .explainer-grid, .before-after { grid-template-columns: 1fr; }
     .starter-layout { grid-template-columns: 1fr; }
     .starter-options { grid-template-columns: 1fr 1fr; }
     .starter-bottom { grid-template-columns: 1fr 1fr; }
@@ -215,22 +255,19 @@
     .pay-summary { position: static; }
     .form-row { grid-template-columns: 1fr; }
     footer { padding: 2rem 1.5rem; }
+    .stat-item { border-right: none; border-bottom: 0.5px solid var(--border); }
   }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
+<!-- Global tooltip -->
+<div class="tooltip-pop" id="global-tooltip"></div>
+
 <nav>
   <a href="#" class="nav-logo" onclick="showMain(); return false;">
     <svg viewBox="0 0 220 44" xmlns="http://www.w3.org/2000/svg" style="height:34px;width:auto;">
-      <defs>
-        <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#E8C97A"/>
-          <stop offset="50%" style="stop-color:#C49A4A"/>
-          <stop offset="100%" style="stop-color:#8B6914"/>
-        </linearGradient>
-      </defs>
+      <defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#E8C97A"/><stop offset="50%" style="stop-color:#C49A4A"/><stop offset="100%" style="stop-color:#8B6914"/></linearGradient></defs>
       <text x="0" y="36" font-family="Cormorant Garamond,Georgia,serif" font-size="38" font-weight="600" fill="url(#lg)" letter-spacing="1">Be Abundant</text>
     </svg>
   </a>
@@ -242,27 +279,214 @@
   <button class="nav-cta" onclick="openPayment('starter')">Start at $199</button>
 </nav>
 
-<!-- ══════════════════════════════
-     MAIN PAGE
-══════════════════════════════ -->
 <div id="main-page">
 
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-bg-text">GROW</div>
     <p class="hero-tag">Content & Automation Support — Powered by AI</p>
-    <h1>Stop running<br>your business<br><span class="gold">alone.</span></h1>
-    <p class="hero-sub">We help small businesses save time, stay consistent, and scale with <strong>smart systems</strong> and <strong>strategic support</strong> — content, automation, admin, and Client Flow Systems, all in one place.</p>
+    <h1>Your business<br>deserves to run<br><span class="gold">without you.</span></h1>
+    <p class="hero-sub">We handle your content, follow-ups, and day-to-day tasks — using smart tools that work for you <strong>even while you sleep.</strong> No tech knowledge needed. We do it all.</p>
     <div class="hero-pillars">
       <div class="pillar"><div class="pillar-icon">✏️</div><div class="pillar-label">Content</div></div>
-      <div class="pillar"><div class="pillar-icon">⚙️</div><div class="pillar-label">Systems</div></div>
+      <div class="pillar"><div class="pillar-icon">⚙️</div><div class="pillar-label">Automation</div></div>
       <div class="pillar"><div class="pillar-icon">📨</div><div class="pillar-label">Follow-Up</div></div>
       <div class="pillar"><div class="pillar-icon">🗂️</div><div class="pillar-label">Admin</div></div>
       <div class="pillar"><div class="pillar-icon">🤝</div><div class="pillar-label">Support</div></div>
     </div>
     <div class="hero-actions">
       <button class="btn-gold" onclick="openPayment('starter')">Try Us for $199 →</button>
-      <a href="#packages" class="btn-ghost">See Full Packages</a>
+      <a href="#explainer" class="btn-ghost">How does it work?</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">80%</div>
+        <div class="stat-label">of small business owners say they spend too much time on tasks that don't grow their revenue</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3×</div>
+        <div class="stat-label">more leads converted by businesses that follow up within 5 minutes of contact</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6 hrs</div>
+        <div class="stat-label">average time per week small business owners spend on social media and content creation alone</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">$0</div>
+        <div class="stat-label">extra payroll — our AI-powered team delivers full-time results at a fraction of the cost</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS AUTOMATION -->
+  <section class="explainer" id="explainer">
+    <div class="explainer-inner">
+      <div class="explainer-grid">
+        <div class="explainer-text">
+          <span class="section-label">What we actually do</span>
+          <h2>Think of us as your<br><em>behind-the-scenes team.</em></h2>
+          <p>You didn't start your business to spend all day replying to DMs, posting on Instagram, or chasing leads. <strong>That's what we're here for.</strong></p>
+          <p>We use tools powered by AI — think of AI like having a super-efficient assistant that never sleeps — to keep your business running, looking professional, and growing, while you focus on what you actually love doing.</p>
+          <p><strong>No complicated tech. No long learning curve.</strong> We set everything up, run it for you, and report back in plain English.</p>
+        </div>
+        <div class="explainer-cards">
+          <div class="explainer-card">
+            <div class="ex-icon">📱</div>
+            <div>
+              <div class="ex-title">Content Creation</div>
+              <div class="ex-desc">We write your posts, design graphics, and schedule them so your brand stays active and consistent — even on your busiest days.</div>
+            </div>
+          </div>
+          <div class="explainer-card">
+            <div class="ex-icon">⚡</div>
+            <div>
+              <div class="ex-title">Automation (the "works while you sleep" part)</div>
+              <div class="ex-desc">When someone fills out your form or sends a DM, our system instantly replies, books them, and follows up — all without you lifting a finger.</div>
+            </div>
+          </div>
+          <div class="explainer-card">
+            <div class="ex-icon">📋</div>
+            <div>
+              <div class="ex-title">Admin & Day-to-Day Tasks</div>
+              <div class="ex-desc">Emails answered, appointments scheduled, data organized. We handle the small stuff so you can think big.</div>
+            </div>
+          </div>
+          <div class="explainer-card">
+            <div class="ex-icon">🔧</div>
+            <div>
+              <div class="ex-title">Client Flow Systems</div>
+              <div class="ex-desc">We build the digital system that captures leads, nurtures them, and turns them into paying clients — like a sales team on autopilot.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE -->
+  <section class="usecase">
+    <div class="usecase-inner">
+      <div class="usecase-head">
+        <span class="section-label">Real-world examples</span>
+        <h2>See what this looks like for a business like yours</h2>
+        <p>Pick a business type and see the before and after.</p>
+      </div>
+      <div class="story-box">
+        <div class="story-tabs">
+          <button class="story-tab active" onclick="switchStory('salon', this)">Salon / Spa</button>
+          <button class="story-tab" onclick="switchStory('coach', this)">Coach / Consultant</button>
+          <button class="story-tab" onclick="switchStory('shop', this)">Online Shop</button>
+          <button class="story-tab" onclick="switchStory('agency', this)">Service Business</button>
+        </div>
+
+        <div class="story-content active" id="story-salon">
+          <div class="story-label">Use Case</div>
+          <div class="story-biz">Maria's Beauty Salon — 1 location, 3 stylists</div>
+          <div class="before-after">
+            <div class="ba-col before">
+              <div class="ba-heading">Before Be Abundant</div>
+              <ul>
+                <li>Spending 2 hrs/day answering booking messages</li>
+                <li>No-shows with no reminders sent</li>
+                <li>Instagram posted only when Maria had time</li>
+                <li>New leads going cold — no follow-up system</li>
+              </ul>
+            </div>
+            <div class="ba-col after">
+              <div class="ba-heading">After Be Abundant</div>
+              <ul>
+                <li>Automated booking replies sent in under 1 minute</li>
+                <li>Reminder texts cut no-shows by 60%</li>
+                <li>16 posts/month go live without Maria touching them</li>
+                <li>Every new lead gets a follow-up sequence automatically</li>
+              </ul>
+            </div>
+          </div>
+          <div class="story-result">Result: <strong>Maria reclaimed 10+ hours per week</strong> and saw a 35% increase in new client bookings within 60 days.</div>
+        </div>
+
+        <div class="story-content" id="story-coach">
+          <div class="story-label">Use Case</div>
+          <div class="story-biz">James — Life & Business Coach, solo operator</div>
+          <div class="before-after">
+            <div class="ba-col before">
+              <div class="ba-heading">Before Be Abundant</div>
+              <ul>
+                <li>Manually emailing leads one by one</li>
+                <li>No consistent presence on social media</li>
+                <li>Discovery call bookings all done through DMs</li>
+                <li>Website hadn't been updated in 2 years</li>
+              </ul>
+            </div>
+            <div class="ba-col after">
+              <div class="ba-heading">After Be Abundant</div>
+              <ul>
+                <li>Email sequences nurture leads on autopilot</li>
+                <li>Content calendar running — 3 posts/week, zero effort</li>
+                <li>Funnel page books discovery calls automatically</li>
+                <li>New website and landing page live in week 1</li>
+              </ul>
+            </div>
+          </div>
+          <div class="story-result">Result: <strong>James went from 2–3 new clients/month to 7–9</strong> without increasing his working hours.</div>
+        </div>
+
+        <div class="story-content" id="story-shop">
+          <div class="story-label">Use Case</div>
+          <div class="story-biz">Sunshine Candles — Etsy + Instagram shop</div>
+          <div class="before-after">
+            <div class="ba-col before">
+              <div class="ba-heading">Before Be Abundant</div>
+              <ul>
+                <li>Content creation taking up entire weekends</li>
+                <li>Customer questions going unanswered for days</li>
+                <li>No email list or follow-up after purchase</li>
+                <li>Inconsistent posting hurting the algorithm</li>
+              </ul>
+            </div>
+            <div class="ba-col after">
+              <div class="ba-heading">After Be Abundant</div>
+              <ul>
+                <li>AI chatbot answers common questions instantly</li>
+                <li>Post-purchase email sequence builds loyalty</li>
+                <li>16 branded posts/month scheduled and live</li>
+                <li>Weekends fully reclaimed for product creation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="story-result">Result: <strong>Repeat purchase rate up 40%.</strong> Weekend hours fully reclaimed for product creation and rest.</div>
+        </div>
+
+        <div class="story-content" id="story-agency">
+          <div class="story-label">Use Case</div>
+          <div class="story-biz">Bright Cleaning Co. — residential & commercial</div>
+          <div class="before-after">
+            <div class="ba-col before">
+              <div class="ba-heading">Before Be Abundant</div>
+              <ul>
+                <li>Quote requests going unanswered for 24–48 hrs</li>
+                <li>Owner doing all scheduling and admin manually</li>
+                <li>No online presence or review generation system</li>
+                <li>Losing jobs to competitors who respond faster</li>
+              </ul>
+            </div>
+            <div class="ba-col after">
+              <div class="ba-heading">After Be Abundant</div>
+              <ul>
+                <li>AI voice caller responds to missed calls instantly</li>
+                <li>Admin VA handles scheduling, freeing 15+ hrs/wk</li>
+                <li>Automated review requests sent after every job</li>
+                <li>Google ranking improved — more inbound leads</li>
+              </ul>
+            </div>
+          </div>
+          <div class="story-result">Result: <strong>Response time dropped from 2 days to under 2 minutes.</strong> Revenue up 28% in quarter one.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -270,25 +494,45 @@
   <section class="starter" id="starter">
     <div class="starter-inner">
       <div class="starter-head">
-        <div class="starter-rule"><span>Starter Implementation Offer</span></div>
-        <h2>The perfect entry point to see <em style="font-style:italic;color:var(--gold)">real results</em> — fast.</h2>
-        <p>Not ready to commit to a monthly retainer? Start here. <strong>Pick one service, get it done right.</strong></p>
+        <div class="starter-rule"><span>Start Small. See Results. Then Scale.</span></div>
+        <h2 class="section-h2" style="font-family:var(--serif); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:300; color:var(--warm-white);">Not sure yet? <em style="font-style:italic;color:var(--gold)">Try us for $199.</em></h2>
+        <p>Pick <strong>one service</strong> below, we deliver it in under a week, and you get to see exactly how we work — no big commitment needed. Hover over each option to see what it does for your business.</p>
       </div>
       <div class="starter-layout">
         <div class="starter-price-col">
           <p class="starter-price-label">Starter Package</p>
-          <p class="starter-price-tag">One-Time Setup Offer</p>
+          <p class="starter-price-tag">One-Time Setup</p>
           <div class="starter-amount"><sup>$</sup>199</div>
-          <p class="starter-note">Choose 1 service below</p>
+          <p class="starter-note">Choose 1 service · Done in 5–7 days</p>
         </div>
         <div class="starter-services">
-          <p class="starter-services-label">What's Included — <strong>Choose 1 Service</strong></p>
+          <p class="starter-services-label">What's Included — <strong>Choose 1 (tap to learn more)</strong></p>
           <div class="starter-options">
-            <div class="starter-option"><div class="s-icon">✏️</div><div class="s-name">Content Starter</div><div class="s-desc">3 branded posts, 1 reel, captions, and scheduling setup.</div></div>
-            <div class="starter-option"><div class="s-icon">⚙️</div><div class="s-name">Follow-Up System Setup</div><div class="s-desc">Lead form, automated response, and missed-call text back.</div></div>
-            <div class="starter-option"><div class="s-icon">📨</div><div class="s-name">Email Automation</div><div class="s-desc">Welcome email sequence and basic nurture workflow.</div></div>
-            <div class="starter-option"><div class="s-icon">🤖</div><div class="s-name">AI Chatbot Setup</div><div class="s-desc">Basic chatbot for your website or social media page.</div></div>
-            <div class="starter-option"><div class="s-icon">🖥️</div><div class="s-name">Website / Funnel Page</div><div class="s-desc">One landing page or funnel page design & setup.</div></div>
+            <div class="starter-option" onmouseenter="showTip(event, 'content-starter')" onmouseleave="hideTip()">
+              <div class="s-icon">✏️</div>
+              <div class="s-name">Content Starter</div>
+              <div class="s-desc">3 branded posts, 1 reel, captions & scheduling.</div>
+            </div>
+            <div class="starter-option" onmouseenter="showTip(event, 'followup')" onmouseleave="hideTip()">
+              <div class="s-icon">⚙️</div>
+              <div class="s-name">Follow-Up Setup</div>
+              <div class="s-desc">Lead form, auto-reply & missed-call text back.</div>
+            </div>
+            <div class="starter-option" onmouseenter="showTip(event, 'email')" onmouseleave="hideTip()">
+              <div class="s-icon">📨</div>
+              <div class="s-name">Email Automation</div>
+              <div class="s-desc">Welcome sequence & basic nurture workflow.</div>
+            </div>
+            <div class="starter-option" onmouseenter="showTip(event, 'chatbot')" onmouseleave="hideTip()">
+              <div class="s-icon">🤖</div>
+              <div class="s-name">AI Chatbot Setup</div>
+              <div class="s-desc">Basic chatbot for your website or social page.</div>
+            </div>
+            <div class="starter-option" onmouseenter="showTip(event, 'funnel')" onmouseleave="hideTip()">
+              <div class="s-icon">🖥️</div>
+              <div class="s-name">Funnel / Landing Page</div>
+              <div class="s-desc">One page designed to capture leads or sell.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -300,7 +544,7 @@
       </div>
       <div style="text-align:center; margin-top:2rem;">
         <button class="btn-gold" onclick="openPayment('starter')">Claim Your $199 Starter →</button>
-        <p style="font-size:12px; color:var(--muted); margin-top:0.75rem;">⚠️ Limited spots available. Credit applies toward any monthly retainer.</p>
+        <p style="font-size:12px; color:var(--muted); margin-top:0.75rem;">⚠️ Limited spots available. The $199 applies as credit toward any monthly package.</p>
       </div>
     </div>
   </section>
@@ -308,72 +552,172 @@
   <!-- PACKAGES -->
   <section class="packages" id="packages">
     <div class="packages-head">
-      <p class="section-label">Monthly Retainer Packages</p>
-      <h2 class="section-h2">Full-service support.<br><em>Built to scale with you.</em></h2>
+      <span class="section-label">Monthly Packages</span>
+      <h2 class="section-h2">Ready to go all in?<br><em>Pick your plan.</em></h2>
+      <p style="font-size:14px; color:var(--muted); margin-top:0.75rem; max-width:500px; margin-left:auto; margin-right:auto;">Tap any feature below to learn exactly what it does for your business.</p>
     </div>
     <div class="packages-grid">
+      <!-- Foundation -->
       <div class="pkg-card">
         <p class="pkg-name">Foundation</p>
         <div class="pkg-price"><sup>$</sup>499<span>/mo</span></div>
-        <p class="pkg-desc">Content foundation + basic automation for businesses starting to systematize their presence.</p>
+        <p class="pkg-desc">Perfect if you're just getting started with systems. We build the foundation so you stop losing leads and start looking professional.</p>
         <div class="pkg-divider"></div>
-        <div class="feat-group"><div class="feat-group-label">Content & Social</div><ul class="feat-list"><li>AI-assisted content strategy</li><li>8 branded posts/month</li><li>Caption writing + graphics</li><li>Scheduling & distribution</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Admin Support</div><ul class="feat-list"><li>Email inbox management</li><li>Basic calendar scheduling</li><li>Data entry (5 hrs/wk)</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Automation</div><ul class="feat-list"><li>Basic follow-up automation</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Support</div><ul class="feat-list"><li>Monthly strategy call</li></ul></div>
+        <div class="feat-group">
+          <div class="feat-group-label">Content & Social</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'f-strategy')" onmouseleave="hideTip()">AI-assisted content strategy <span class="feat-note">tap ↑</span></li>
+            <li onmouseenter="showTip(event,'f-posts')" onmouseleave="hideTip()">8 branded posts/month</li>
+            <li onmouseenter="showTip(event,'f-captions')" onmouseleave="hideTip()">Caption writing + graphics</li>
+            <li onmouseenter="showTip(event,'f-scheduling')" onmouseleave="hideTip()">Scheduling & distribution</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Admin Support</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'f-inbox')" onmouseleave="hideTip()">Email inbox management</li>
+            <li onmouseenter="showTip(event,'f-calendar')" onmouseleave="hideTip()">Basic calendar scheduling</li>
+            <li onmouseenter="showTip(event,'f-data')" onmouseleave="hideTip()">Data entry (5 hrs/wk)</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Automation</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'f-followup')" onmouseleave="hideTip()">Basic follow-up automation</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Support</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'f-call')" onmouseleave="hideTip()">Monthly strategy call</li>
+          </ul>
+        </div>
         <button class="pkg-btn" onclick="openPayment('foundation')">Get Started →</button>
       </div>
+
+      <!-- Growth -->
       <div class="pkg-card featured">
         <span class="most-popular">Most Popular</span>
         <p class="pkg-name">Growth Systems</p>
         <div class="pkg-price"><sup>$</sup>997<span>/mo</span></div>
-        <p class="pkg-desc">Full content engine, lead flow automation, and digital infrastructure for operators ready to scale.</p>
+        <p class="pkg-desc">The full package. More content, real automation, and a team handling your admin — so you can focus 100% on serving clients.</p>
         <div class="pkg-divider"></div>
-        <div class="feat-group"><div class="feat-group-label">Content & Social</div><ul class="feat-list"><li>16 branded posts/month</li><li>4 short-form videos/month</li><li>AI-generated branded visuals</li><li>Full platform scheduling</li><li>Social media AI chatbot setup</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Admin Support</div><ul class="feat-list"><li>Full inbox + calendar management</li><li>CRM data entry & organization</li><li>Document & proposal prep</li><li>10 hrs/wk dedicated admin</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Automation & Lead Flow</div><ul class="feat-list"><li>Lead follow-up automations</li><li>Nurturing automations</li><li>Email marketing support</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Client Flow Systems</div><ul class="feat-list"><li>Funnel build</li><li>Website build or refresh</li><li>Everything in Foundation</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Support</div><ul class="feat-list"><li>Bi-weekly strategy calls</li></ul></div>
+        <div class="feat-group">
+          <div class="feat-group-label">Content & Social</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'g-posts')" onmouseleave="hideTip()">16 branded posts/month</li>
+            <li onmouseenter="showTip(event,'g-videos')" onmouseleave="hideTip()">4 short-form videos/month</li>
+            <li onmouseenter="showTip(event,'g-visuals')" onmouseleave="hideTip()">AI-generated branded visuals</li>
+            <li onmouseenter="showTip(event,'g-scheduling')" onmouseleave="hideTip()">Full platform scheduling</li>
+            <li onmouseenter="showTip(event,'g-chatbot')" onmouseleave="hideTip()">Social media AI chatbot</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Admin Support</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'g-inbox')" onmouseleave="hideTip()">Full inbox + calendar management</li>
+            <li onmouseenter="showTip(event,'g-crm')" onmouseleave="hideTip()">CRM data entry & organization</li>
+            <li onmouseenter="showTip(event,'g-docs')" onmouseleave="hideTip()">Document & proposal prep</li>
+            <li onmouseenter="showTip(event,'g-admin')" onmouseleave="hideTip()">10 hrs/wk dedicated admin</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Automation & Lead Flow</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'g-leadflow')" onmouseleave="hideTip()">Lead follow-up automations</li>
+            <li onmouseenter="showTip(event,'g-nurture')" onmouseleave="hideTip()">Nurturing automations</li>
+            <li onmouseenter="showTip(event,'g-email')" onmouseleave="hideTip()">Email marketing support</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Client Flow Systems</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'g-funnel')" onmouseleave="hideTip()">Funnel build</li>
+            <li onmouseenter="showTip(event,'g-website')" onmouseleave="hideTip()">Website build or refresh</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Support</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'g-calls')" onmouseleave="hideTip()">Bi-weekly strategy calls</li>
+          </ul>
+        </div>
         <button class="pkg-btn" onclick="openPayment('growth')">Get Started →</button>
       </div>
+
+      <!-- Operator -->
       <div class="pkg-card">
         <p class="pkg-name">Operator Suite</p>
         <div class="pkg-price"><sup>$</sup>1,797<span>/mo</span></div>
-        <p class="pkg-desc">Full business infrastructure for founders ready to scale without adding headcount.</p>
+        <p class="pkg-desc">For founders who are ready to scale fast. Full infrastructure, dedicated VA, and AI tools working together so you can grow without hiring.</p>
         <div class="pkg-divider"></div>
-        <div class="feat-group"><div class="feat-group-label">Advanced Content</div><ul class="feat-list"><li>Everything in Growth Systems</li><li>8 videos/month</li><li>Advanced content systems</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Admin Support</div><ul class="feat-list"><li>Priority inbox zero management</li><li>Full client coordination</li><li>20 hrs/wk dedicated admin VA</li><li>SOP documentation</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">AI & Automation</div><ul class="feat-list"><li>AI chatbot + voice caller</li><li>Advanced lead nurture build</li><li>Advanced workflow automations</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Client Flow Systems</div><ul class="feat-list"><li>Funnel + landing page support</li><li>Backend operations support</li><li>AI analytics & reporting</li></ul></div>
-        <div class="feat-group"><div class="feat-group-label">Support</div><ul class="feat-list"><li>Weekly calls + priority access</li></ul></div>
+        <div class="feat-group">
+          <div class="feat-group-label">Advanced Content</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'o-everything')" onmouseleave="hideTip()">Everything in Growth Systems</li>
+            <li onmouseenter="showTip(event,'o-videos')" onmouseleave="hideTip()">8 videos/month</li>
+            <li onmouseenter="showTip(event,'o-systems')" onmouseleave="hideTip()">Advanced content systems</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Admin Support</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'o-inbox')" onmouseleave="hideTip()">Priority inbox zero management</li>
+            <li onmouseenter="showTip(event,'o-coord')" onmouseleave="hideTip()">Full client coordination</li>
+            <li onmouseenter="showTip(event,'o-va')" onmouseleave="hideTip()">20 hrs/wk dedicated admin VA</li>
+            <li onmouseenter="showTip(event,'o-sop')" onmouseleave="hideTip()">SOP documentation</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">AI & Automation</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'o-voice')" onmouseleave="hideTip()">AI chatbot + voice caller</li>
+            <li onmouseenter="showTip(event,'o-nurture')" onmouseleave="hideTip()">Advanced lead nurture build</li>
+            <li onmouseenter="showTip(event,'o-workflows')" onmouseleave="hideTip()">Advanced workflow automations</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Client Flow Systems</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'o-funnel')" onmouseleave="hideTip()">Funnel + landing page support</li>
+            <li onmouseenter="showTip(event,'o-backend')" onmouseleave="hideTip()">Backend operations support</li>
+            <li onmouseenter="showTip(event,'o-analytics')" onmouseleave="hideTip()">AI analytics & reporting</li>
+          </ul>
+        </div>
+        <div class="feat-group">
+          <div class="feat-group-label">Support</div>
+          <ul class="feat-list">
+            <li onmouseenter="showTip(event,'o-calls')" onmouseleave="hideTip()">Weekly calls + priority access</li>
+          </ul>
+        </div>
         <button class="pkg-btn" onclick="openPayment('operator')">Get Started →</button>
       </div>
     </div>
-    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:1.5rem;">Your $199 Starter credit applies toward any monthly retainer. No long-term contracts required.</p>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:1.5rem;">Your $199 Starter credit applies toward any monthly package. No long-term contracts required.</p>
   </section>
 
   <!-- WHY -->
   <section class="why">
-    <p class="section-label">Why Be Abundant</p>
+    <span class="section-label">Why Be Abundant</span>
     <h2 class="section-h2">Everything you need.<br><em>Nothing you don't.</em></h2>
     <div class="why-grid">
-      <div class="why-card"><div class="why-num">01</div><h4>AI-Enhanced Delivery</h4><p>We use cutting-edge AI tools across every service to deliver more, faster — without sacrificing quality.</p></div>
-      <div class="why-card"><div class="why-num">02</div><h4>No Lock-In Contracts</h4><p>Month-to-month retainers with no long-term commitment. We earn your business every single month.</p></div>
-      <div class="why-card"><div class="why-num">03</div><h4>Dedicated Support Team</h4><p>You get a dedicated team who knows your business — not random freelancers assigned on a whim.</p></div>
-      <div class="why-card"><div class="why-num">04</div><h4>One Roof, One Team</h4><p>Content, admin, automations, and Client Flow Systems — all coordinated seamlessly under one team.</p></div>
+      <div class="why-card"><div class="why-num">01</div><h4>Plain English, Always</h4><p>No jargon, no tech confusion. We explain what we're doing and why, and you always know exactly what's happening with your business.</p></div>
+      <div class="why-card"><div class="why-num">02</div><h4>No Long Contracts</h4><p>Month-to-month only. No lock-in, no fine print. We earn your business every single month by delivering results.</p></div>
+      <div class="why-card"><div class="why-num">03</div><h4>A Real Dedicated Team</h4><p>You get a team that knows your business, your voice, and your goals — not a random person assigned from a pool.</p></div>
+      <div class="why-card"><div class="why-num">04</div><h4>One Stop, Everything Done</h4><p>Content, admin, systems, follow-up — all in one place, all working together. No juggling five different vendors.</p></div>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="cta-section" id="contact">
-    <p class="section-label">Ready to Get Started?</p>
-    <h2 class="section-h2">Let's build something<br><em>that actually works.</em></h2>
-    <p><strong>Limited spots available.</strong> Start with $199 or jump into a monthly package.</p>
+    <span class="section-label">Ready to Get Started?</span>
+    <h2 class="section-h2">Stop doing it all alone.<br><em>Let's build this together.</em></h2>
+    <p><strong>Limited spots available.</strong> Start risk-free at $199 or jump into a full monthly package.</p>
     <div class="cta-actions">
       <button class="btn-gold" onclick="openPayment('starter')">Claim Your $199 Starter →</button>
-      <a href="mailto:hello@beabundant.com" class="btn-ghost">Send Us an Email</a>
+      <a href="mailto:hello@beabundant.com" class="btn-ghost">Email Us</a>
     </div>
-    <p class="cta-urgency">Your $199 Starter applies as credit toward any monthly retainer. <strong>Let's grow your business.</strong></p>
+    <p class="cta-urgency">Your $199 starter applies as credit toward any monthly package. <strong>Zero risk. Real results.</strong></p>
   </section>
 
   <footer>
@@ -385,42 +729,33 @@
     <div style="display:flex; gap:1.5rem;"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
   </footer>
 
-</div><!-- end #main-page -->
+</div><!-- end main-page -->
 
-
-<!-- ══════════════════════════════
-     PAYMENT PAGE
-══════════════════════════════ -->
+<!-- PAYMENT PAGE -->
 <div id="payment-page">
   <div class="pay-wrap">
-
-    <!-- LEFT: Order Summary -->
     <div class="pay-summary">
       <button class="pay-back" onclick="showMain()">Back to packages</button>
       <div class="pay-badge" id="pay-badge">Starter Package</div>
       <h2 class="pay-pkg-name" id="pay-pkg-name">Starter<br>Package</h2>
       <p class="pay-pkg-desc" id="pay-pkg-desc">One-time setup offer. Pick one service, see real results fast.</p>
-
       <div class="pay-price-box">
         <div class="pay-price-row"><span>Package</span><span id="pay-price-label">Starter — One Time</span></div>
         <div class="pay-price-row"><span>Billing</span><span id="pay-billing-label">One-time</span></div>
         <div class="pay-price-row"><span>Setup fee</span><span>$0</span></div>
         <div class="pay-price-row total"><span>Total due today</span><strong id="pay-total">$199</strong></div>
       </div>
-
       <ul class="pay-features" id="pay-features">
         <li>Choose 1 service: content, automation, email, chatbot, or funnel</li>
         <li>Delivered within 5–7 business days</li>
-        <li>Credit applies toward any monthly retainer</li>
+        <li>Credit applies toward any monthly package</li>
       </ul>
     </div>
 
-    <!-- RIGHT: Checkout Form -->
     <div class="pay-form-box" id="checkout-form-box">
       <h3 class="pay-form-title">Complete your order</h3>
-      <p class="pay-form-sub">Fill in your details below. After submitting, you'll receive a confirmation and onboarding email within 24 hours.</p>
+      <p class="pay-form-sub">Fill in your details below. You'll be redirected to our secure payment page to complete checkout.</p>
 
-      <!-- ─── STEP 1: Contact Info ─── -->
       <span class="form-section-label">01 — Your Information</span>
       <div class="form-row">
         <div class="form-group"><label>First Name</label><input type="text" id="f-fname" placeholder="Jane"></div>
@@ -430,11 +765,10 @@
       <div class="form-group"><label>Phone Number</label><input type="tel" id="f-phone" placeholder="+1 (555) 000-0000"></div>
       <div class="form-group"><label>Business Name</label><input type="text" id="f-biz" placeholder="Your Business Name"></div>
 
-      <!-- ─── STEP 2: Package confirm ─── -->
       <span class="form-section-label">02 — Package Selection</span>
       <div class="form-group">
         <label>Selected Package</label>
-        <select id="f-package">
+        <select id="f-package" onchange="onPkgChange()">
           <option value="starter">Starter — $199 (One-time)</option>
           <option value="foundation">Foundation — $499/mo</option>
           <option value="growth">Growth Systems — $997/mo</option>
@@ -457,138 +791,175 @@
         <textarea id="f-notes" placeholder="Tell us about your business, goals, or current challenges…"></textarea>
       </div>
 
-      <!-- ─── STEP 3: Payment ─── -->
       <span class="form-section-label">03 — Secure Payment</span>
-
       <div style="background:var(--surface2); border:0.5px solid var(--border); border-radius:4px; padding:1.25rem 1.5rem; margin-bottom:1rem;">
         <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem;">
           <span style="font-size:1.1rem;">🔒</span>
           <span style="font-size:12px; color:var(--warm-white); font-weight:500;">Secure Checkout via FastPayDirect</span>
         </div>
-        <p style="font-size:12px; color:var(--muted); line-height:1.6;">Clicking the button below will take you to our secure payment page. Your info is submitted first so we can start your onboarding automatically.</p>
+        <p style="font-size:12px; color:var(--muted); line-height:1.6;">Your info above will be sent to us for onboarding, then you'll be redirected to complete payment securely.</p>
       </div>
 
-      <button class="pay-submit" id="pay-submit-btn" onclick="handleSubmit()">
-        Proceed to Secure Payment →
-      </button>
+      <button class="pay-submit" onclick="handleSubmit()">Proceed to Secure Payment →</button>
 
       <p class="pay-legal">
         By completing your order you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.<br>
-        Monthly retainers can be cancelled with 30 days notice. No long-term contracts.
+        Monthly packages can be cancelled with 30 days notice. No long-term contracts.
       </p>
     </div>
 
-    <!-- Success Screen (shown after submit) -->
     <div id="success-screen" style="grid-column: 1 / -1;">
       <div class="success-icon">🎉</div>
       <h2 class="success-title">You're in.<br><em>Let's get to work.</em></h2>
-      <p class="success-sub">Your order has been received. Check your email for a confirmation and onboarding details — we'll be in touch within 24 hours.</p>
+      <p class="success-sub">Your order has been received. Check your email for confirmation and onboarding details — we'll be in touch within 24 hours.</p>
       <button class="btn-gold" onclick="showMain()">← Back to Home</button>
     </div>
-
   </div>
-</div><!-- end #payment-page -->
+</div>
 
 <script>
-  // ── Payment Links ──
-  const paymentLinks = {
-    starter:    'https://link.fastpaydirect.com/payment-link/6a16e4a2c3ea3a19f0bd8aff',
-    foundation: 'https://link.fastpaydirect.com/payment-link/6a16e57af4e3f699673a5e6f',
-    growth:     'https://link.fastpaydirect.com/payment-link/6a17ffb0c3ea3a19f0bd8dee',
-    operator:   'https://link.fastpaydirect.com/payment-link/6a17ffeac3ea3a19f0bd8def'
-  };
+const paymentLinks = {
+  starter:    'https://link.fastpaydirect.com/payment-link/6a16e4a2c3ea3a19f0bd8aff',
+  foundation: 'https://link.fastpaydirect.com/payment-link/6a16e57af4e3f699673a5e6f',
+  growth:     'https://link.fastpaydirect.com/payment-link/6a17ffb0c3ea3a19f0bd8dee',
+  operator:   'https://link.fastpaydirect.com/payment-link/6a17ffeac3ea3a19f0bd8def'
+};
 
-  // ── Package data ──
-  const pkgs = {
-    starter: {
-      badge: 'Starter Package', name: 'Starter\nPackage', desc: 'One-time setup offer. Pick one service and see real results fast. Credit applies toward any monthly retainer.',
-      priceLabel: 'Starter — One Time', billing: 'One-time', total: '$199',
-      features: ['Choose 1 service: content, automation, email, chatbot, or funnel', 'Delivered within 5–7 business days', 'Credit applies toward any monthly retainer'],
-      selectVal: 'starter', showStarterService: true
-    },
-    foundation: {
-      badge: 'Foundation', name: 'Foundation', desc: 'Content foundation + basic automation for businesses starting to systematize their presence.',
-      priceLabel: 'Foundation — Monthly', billing: 'Monthly retainer', total: '$499/mo',
-      features: ['8 branded posts/month + captions & graphics', 'Email inbox management + basic admin (5 hrs/wk)', 'Basic follow-up automation', 'Monthly strategy call'],
-      selectVal: 'foundation', showStarterService: false
-    },
-    growth: {
-      badge: 'Growth Systems', name: 'Growth\nSystems', desc: 'Full content engine, lead flow automation, and digital infrastructure for operators ready to scale.',
-      priceLabel: 'Growth Systems — Monthly', billing: 'Monthly retainer', total: '$997/mo',
-      features: ['16 posts + 4 short-form videos/month', 'Full inbox, CRM & admin (10 hrs/wk)', 'Lead follow-up + nurturing automations', 'Funnel build + website refresh', 'Bi-weekly strategy calls'],
-      selectVal: 'growth', showStarterService: false
-    },
-    operator: {
-      badge: 'Operator Suite', name: 'Operator\nSuite', desc: 'Full business infrastructure for founders ready to scale without adding headcount.',
-      priceLabel: 'Operator Suite — Monthly', billing: 'Monthly retainer', total: '$1,797/mo',
-      features: ['Everything in Growth Systems', '8 videos/month + advanced content systems', 'AI chatbot + voice caller + advanced automations', '20 hrs/wk dedicated admin VA + SOP docs', 'Weekly calls + priority access'],
-      selectVal: 'operator', showStarterService: false
-    }
-  };
+const pkgs = {
+  starter:   { badge:'Starter Package', name:'Starter<br>Package', desc:'One-time setup. Pick one service and see real results — delivered in under a week.', priceLabel:'Starter — One Time', billing:'One-time', total:'$199', features:['Choose 1 service: content, automation, email, chatbot, or funnel','Delivered within 5–7 business days','Credit applies toward any monthly package'], selectVal:'starter', showService:true },
+  foundation:{ badge:'Foundation', name:'Foundation', desc:'Content + basic systems for businesses starting to get organized and stay consistent.', priceLabel:'Foundation — Monthly', billing:'Monthly retainer', total:'$499/mo', features:['8 branded posts/month + captions & graphics','Email inbox management + basic admin (5 hrs/wk)','Basic follow-up automation','Monthly strategy call'], selectVal:'foundation', showService:false },
+  growth:    { badge:'Growth Systems', name:'Growth<br>Systems', desc:'Full content engine, lead automation, and admin support for operators ready to scale.', priceLabel:'Growth Systems — Monthly', billing:'Monthly retainer', total:'$997/mo', features:['16 posts + 4 short-form videos/month','Full inbox, CRM & 10 hrs/wk admin','Lead follow-up + nurturing automations','Funnel + website build','Bi-weekly strategy calls'], selectVal:'growth', showService:false },
+  operator:  { badge:'Operator Suite', name:'Operator<br>Suite', desc:'Full business infrastructure — for founders ready to scale without adding headcount.', priceLabel:'Operator Suite — Monthly', billing:'Monthly retainer', total:'$1,797/mo', features:['Everything in Growth Systems','8 videos/month + advanced content systems','AI chatbot + voice caller + advanced automations','20 hrs/wk dedicated admin VA + SOP docs','Weekly calls + priority access'], selectVal:'operator', showService:false }
+};
 
-  function openPayment(pkg) {
-    const d = pkgs[pkg] || pkgs.starter;
-    // Update summary
-    document.getElementById('pay-badge').textContent = d.badge;
-    document.getElementById('pay-pkg-name').innerHTML = d.name.replace('\n', '<br>');
-    document.getElementById('pay-pkg-desc').textContent = d.desc;
-    document.getElementById('pay-price-label').textContent = d.priceLabel;
-    document.getElementById('pay-billing-label').textContent = d.billing;
-    document.getElementById('pay-total').textContent = d.total;
-    const fl = document.getElementById('pay-features');
-    fl.innerHTML = d.features.map(f => `<li>${f}</li>`).join('');
-    // Update form
-    document.getElementById('f-package').value = d.selectVal;
-    document.getElementById('starter-service-row').style.display = d.showStarterService ? 'flex' : 'none';
-    // Show page
-    document.getElementById('main-page').style.display = 'none';
-    document.getElementById('payment-page').style.display = 'block';
-    document.getElementById('checkout-form-box').style.display = 'block';
-    document.getElementById('success-screen').style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+const tipData = {
+  'content-starter': { title:'Content Starter', body:'We create 3 branded posts, 1 short video reel, write the captions, and set up your scheduling tool — so your social media starts working without you.', bullets:['Consistent posting = more visibility','Looks professional from day one','Done in under a week'] },
+  followup:   { title:'Follow-Up System Setup', body:"When someone contacts you, our system replies instantly — even if you're asleep. No more leads going cold because you didn't get back fast enough.", bullets:['Instant auto-reply to new leads','Missed-call text back setup','Lead capture form built and ready'] },
+  email:      { title:'Email Automation', body:"A welcome email goes out the moment someone joins your list — then a series of helpful follow-ups go out automatically to build trust and bring them back.", bullets:['Welcome sequence (3–5 emails)','Nurture workflow to warm up leads','Works 24/7 without you'] },
+  chatbot:    { title:'AI Chatbot Setup', body:"A smart assistant on your website or social page that answers common questions, captures contact info, and books appointments — even at 2am.", bullets:['Answers FAQs automatically','Captures name, email, phone','Never misses a visitor'] },
+  funnel:     { title:'Funnel / Landing Page', body:"A single focused page designed to turn visitors into leads or buyers. No distractions, no confusion — just a clear path to action.", bullets:['Designed to convert visitors','Mobile-friendly and fast','Connected to your contact system'] },
+  'f-strategy':  { title:'AI Content Strategy', body:"We research what your audience wants to see and create a content plan around it — so every post has a purpose and moves people toward working with you.", bullets:['Based on your niche & audience','Planned a month ahead','No more guessing what to post'] },
+  'f-posts':     { title:'8 Branded Posts/Month', body:"8 fully designed, on-brand posts per month — graphics, captions, and all. Posted consistently so the algorithm keeps showing your business to new people.", bullets:['2 posts per week','Branded to your colors & style','Consistent = more reach'] },
+  'f-captions':  { title:'Caption Writing + Graphics', body:"Every post comes with a written caption that sounds like you — and a graphic that looks professional, even if you have zero design experience.", bullets:['Captions written in your voice','Eye-catching graphics included','Calls-to-action in every post'] },
+  'f-scheduling':{ title:'Scheduling & Distribution', body:"We schedule every post in advance using professional tools — so your content goes out at the best time, every time, without you having to remember.", bullets:['Posted at peak engagement times','Cross-platform if needed','You never have to hit publish'] },
+  'f-inbox':     { title:'Email Inbox Management', body:"We monitor and manage your inbox — flagging what matters, responding to common inquiries, and keeping things organized so nothing falls through the cracks.", bullets:['Daily inbox monitoring','Template replies for FAQs','Important items flagged for you'] },
+  'f-calendar':  { title:'Calendar Scheduling', body:"We handle your appointment booking — confirming times, sending reminders, and making sure your schedule is organized and running smoothly.", bullets:['Appointment confirmations sent','Reminders to reduce no-shows','You focus on showing up, not scheduling'] },
+  'f-data':      { title:'Data Entry (5 hrs/wk)', body:"5 hours per week of hands-on admin help — entering customer info, updating spreadsheets, keeping your records clean and current.", bullets:['CRM updates kept current','Spreadsheets organized','Saves you 5+ hrs every week'] },
+  'f-followup':  { title:'Basic Follow-Up Automation', body:"When a new lead comes in, the system automatically sends a message to start the conversation — no manual work, no leads going cold.", bullets:['Instant reply to new inquiries','Follow-up sent if no response','Runs 24/7 automatically'] },
+  'f-call':      { title:'Monthly Strategy Call', body:"Once a month we jump on a call together to review what's working, what to adjust, and what to focus on next. You're never left wondering.", bullets:['30–45 min check-in','Review results together','Plan next month ahead'] },
+  'g-posts':     { title:'16 Branded Posts/Month', body:"Double the content — 4 posts per week keeping your brand active, visible, and top-of-mind for your audience across all platforms.", bullets:['4 posts per week','All branded and on-message','More visibility = more leads'] },
+  'g-videos':    { title:'4 Short-Form Videos/Month', body:"Reels and short videos get 3× more reach than static posts. We create, edit, and caption 4 per month to grow your audience fast.", bullets:['Script + edit included','Captions and hashtags added','Posted at best times for reach'] },
+  'g-visuals':   { title:'AI-Generated Branded Visuals', body:"Custom graphics made with AI tools — fast, beautiful, and on-brand. Your feed looks like you have a full design team.", bullets:['Consistent brand look','Multiple formats (post, story, reel cover)','No design software needed from you'] },
+  'g-scheduling':{ title:'Full Platform Scheduling', body:"We schedule across every platform you use — Instagram, Facebook, TikTok, LinkedIn — so everything goes out on time, everywhere.", bullets:['All platforms managed','Optimal timing per platform','You approve, we post'] },
+  'g-chatbot':   { title:'Social Media AI Chatbot', body:"An AI assistant in your DMs that replies to common messages, collects contact info, and sends people to your booking link — automatically.", bullets:['Responds to DMs 24/7','Captures leads from social','Sends people to your funnel or booking page'] },
+  'g-inbox':     { title:'Full Inbox + Calendar Management', body:"We fully manage your email and calendar — sorting, responding, booking, and organizing so your days run smoother.", bullets:['Inbox kept clean and organized','Appointments handled for you','Nothing slips through'] },
+  'g-crm':       { title:'CRM Data Entry & Organization', body:"Your customer database stays clean, current, and organized — so you always know who your leads are and where they are in the process.", bullets:['New contacts added promptly','Stages and tags kept updated','You always know your pipeline'] },
+  'g-docs':      { title:'Document & Proposal Prep', body:"We draft proposals, contracts, and documents so they're ready when you need them — professional and ready to send.", bullets:['Proposals drafted from your notes','Templates built for repeat use','Quick turnaround'] },
+  'g-admin':     { title:'10 hrs/wk Dedicated Admin', body:"A dedicated team member giving your business 10 hours every week — handling whatever admin tasks need to get done.", bullets:['Consistent weekly support','Tasks handled as they come up','Like having a part-time assistant'] },
+  'g-leadflow':  { title:'Lead Follow-Up Automations', body:"The moment a new lead comes in, a series of messages goes out automatically — greeting them, answering questions, and warming them up to buy.", bullets:['Instant first contact','Multi-step follow-up sequence','No leads go cold'] },
+  'g-nurture':   { title:'Nurturing Automations', body:"For leads who aren't ready yet, the system keeps in touch automatically — sharing value and staying top-of-mind until they're ready.", bullets:['Long-term lead nurturing','Timed messages over days or weeks','Turns cold leads warm again'] },
+  'g-email':     { title:'Email Marketing Support', body:"We help design and send email campaigns to your list — newsletters, promos, announcements — keeping your audience engaged and buying.", bullets:['Campaign strategy included','Written and designed for you','Sent to your list on schedule'] },
+  'g-funnel':    { title:'Funnel Build', body:"A complete sales funnel — landing page, lead capture, thank you page, and connected automations — designed to turn strangers into paying clients.", bullets:['Full funnel built for you','Connected to your automation system','Tested and optimized'] },
+  'g-website':   { title:'Website Build or Refresh', body:"We build or refresh your website so it looks professional, loads fast, and actually converts visitors instead of just sitting there.", bullets:['Modern, mobile-friendly design','Clear calls to action','Connected to your booking/payment system'] },
+  'g-calls':     { title:'Bi-Weekly Strategy Calls', body:"Every two weeks we check in, review results, and plan ahead together — so you always know what's happening and what's next.", bullets:['Every 2 weeks, 30–45 min','Review metrics together','Adjust strategy as needed'] },
+  'o-everything':{ title:'Everything in Growth Systems', body:"You get everything included in the Growth Systems package — all the content, admin, automation, and client flow features — as your baseline.", bullets:['All Growth features included','Solid foundation already in place','Then we add more on top'] },
+  'o-videos':    { title:'8 Videos/Month', body:"Double the video content — 8 short-form videos per month to dominate social media and build a serious audience fast.", bullets:['2 videos per week','Scripted, edited, captioned','Maximum reach and engagement'] },
+  'o-systems':   { title:'Advanced Content Systems', body:"We build a content engine that runs almost on its own — templates, repeatable workflows, and tools that make great content faster every month.", bullets:['Content calendar fully managed','Repurposing across platforms','Optimized for growth'] },
+  'o-inbox':     { title:'Priority Inbox Zero Management', body:"We aim for inbox zero every day — everything sorted, responded to, or flagged. You open your email and it's clean, always.", bullets:['Daily inbox management','Priority items escalated immediately','You never feel buried in email'] },
+  'o-coord':     { title:'Full Client Coordination', body:"We handle client communication, follow-up, scheduling, and check-ins — so your clients feel well taken care of without you doing the chasing.", bullets:['Client messages handled for you','Follow-ups sent on your behalf','Professional experience for every client'] },
+  'o-va':        { title:'20 hrs/wk Dedicated Admin VA', body:"A dedicated virtual assistant giving your business 20 hours every week — like a part-time employee, without the overhead.", bullets:['Consistent daily support','Tasks handled as they come in','Your own right-hand person'] },
+  'o-sop':       { title:'SOP Documentation', body:"We document how your business runs — step-by-step processes for every key task — so it's repeatable, trainable, and doesn't rely only on you.", bullets:['Processes written and organized','Easy to hand off to new team members','Your business runs even without you'] },
+  'o-voice':     { title:'AI Chatbot + Voice Caller', body:"An AI that can answer your phone, respond to missed calls, and handle common questions by voice — so no call goes unanswered, ever.", bullets:['Answers missed calls automatically','Collects caller info and intent','Routes to the right place or books them'] },
+  'o-nurture':   { title:'Advanced Lead Nurture Build', body:"A sophisticated multi-step system that follows up with leads over weeks or months — building trust and bringing them back until they're ready to buy.", bullets:['Multi-step sequences','Behavior-triggered messages','Long-term lead conversion'] },
+  'o-workflows': { title:'Advanced Workflow Automations', body:"Complex automations that connect your tools, trigger actions based on behavior, and run your business operations behind the scenes.", bullets:['Multi-trigger automations','Connected across all your tools','Fully customized to your process'] },
+  'o-funnel':    { title:'Funnel + Landing Page Support', body:"Ongoing support for all your funnels and pages — updates, A/B tests, new pages as needed — so your digital infrastructure keeps getting better.", bullets:['Ongoing updates and improvements','New pages built as you need them','Tested for best conversion'] },
+  'o-backend':   { title:'Backend Operations Support', body:"We help run the behind-the-scenes of your business — supplier coordination, internal communications, project tracking — so operations run smoothly.", bullets:['Internal ops kept organized','Project status tracked','You focus only on high-value decisions'] },
+  'o-analytics': { title:'AI Analytics & Reporting', body:"Monthly reports in plain English showing what's working, what's growing, and what to focus on next — no spreadsheets, no confusion.", bullets:['Clear monthly report delivered','Metrics explained simply','Recommendations for next month'] },
+  'o-calls':     { title:'Weekly Calls + Priority Access', body:"We talk every week and you get priority support — quick replies, fast turnarounds, and a team that treats your business like a top priority.", bullets:['Weekly 30-min check-ins','Priority response time','Direct line to your team'] }
+};
 
-  // Auto-toggle starter service dropdown
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('f-package').addEventListener('change', function() {
-      document.getElementById('starter-service-row').style.display = this.value === 'starter' ? 'flex' : 'none';
-    });
-  });
+const tooltip = document.getElementById('global-tooltip');
 
-  function showMain() {
-    document.getElementById('main-page').style.display = 'block';
-    document.getElementById('payment-page').style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+function showTip(event, key) {
+  const d = tipData[key];
+  if (!d) return;
+  let html = `<h4>${d.title}</h4><p>${d.body}</p>`;
+  if (d.bullets) html += `<ul>${d.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
+  html += `<span class="tooltip-tip">tap for details</span>`;
+  tooltip.innerHTML = html;
+  positionTip(event);
+  tooltip.classList.add('visible');
+}
 
-  // Track which package is currently open
-  let currentPkg = 'starter';
+function positionTip(event) {
+  const margin = 12;
+  tooltip.style.left = '-9999px';
+  tooltip.style.top = '-9999px';
+  tooltip.classList.add('visible');
+  const tw = tooltip.offsetWidth || 240;
+  const th = tooltip.offsetHeight || 160;
+  let x = event.clientX + margin;
+  let y = event.clientY - th / 2;
+  if (x + tw > window.innerWidth - margin) x = event.clientX - tw - margin;
+  if (y < margin) y = margin;
+  if (y + th > window.innerHeight - margin) y = window.innerHeight - th - margin;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top = y + 'px';
+}
 
-  function handleSubmit() {
-    const fname = document.getElementById('f-fname').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    if (!fname || !email) { alert('Please fill in at least your name and email to continue.'); return; }
+function hideTip() { tooltip.classList.remove('visible'); }
 
-    const pkg = document.getElementById('f-package').value;
-    const link = paymentLinks[pkg];
+function switchStory(id, btn) {
+  document.querySelectorAll('.story-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.story-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('story-' + id).classList.add('active');
+  btn.classList.add('active');
+}
 
-    if (!link || link.includes('YOUR_')) {
-      alert('Payment link for this package isn\'t set up yet. Please contact us directly!');
-      return;
-    }
+function openPayment(pkg) {
+  const d = pkgs[pkg] || pkgs.starter;
+  document.getElementById('pay-badge').textContent = d.badge;
+  document.getElementById('pay-pkg-name').innerHTML = d.name;
+  document.getElementById('pay-pkg-desc').textContent = d.desc;
+  document.getElementById('pay-price-label').textContent = d.priceLabel;
+  document.getElementById('pay-billing-label').textContent = d.billing;
+  document.getElementById('pay-total').textContent = d.total;
+  document.getElementById('pay-features').innerHTML = d.features.map(f=>`<li>${f}</li>`).join('');
+  document.getElementById('f-package').value = d.selectVal;
+  document.getElementById('starter-service-row').style.display = d.showService ? 'flex' : 'none';
+  document.getElementById('main-page').style.display = 'none';
+  document.getElementById('payment-page').style.display = 'block';
+  document.getElementById('checkout-form-box').style.display = 'block';
+  document.getElementById('success-screen').style.display = 'none';
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
 
-    // Build URL with prefilled contact info so FastPayDirect/GHL can capture the lead
-    // FastPayDirect supports query params: ?first_name=&last_name=&email=&phone=
-    const url = new URL(link);
-    url.searchParams.set('first_name', fname);
-    url.searchParams.set('last_name', document.getElementById('f-lname').value.trim());
-    url.searchParams.set('email', email);
-    if (phone) url.searchParams.set('phone', phone);
+function onPkgChange() {
+  const v = document.getElementById('f-package').value;
+  document.getElementById('starter-service-row').style.display = v === 'starter' ? 'flex' : 'none';
+}
 
-    // Redirect to payment page
-    window.location.href = url.toString();
-  }
+function showMain() {
+  document.getElementById('main-page').style.display = 'block';
+  document.getElementById('payment-page').style.display = 'none';
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+function handleSubmit() {
+  const fname = document.getElementById('f-fname').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  if (!fname || !email) { alert('Please fill in your name and email to continue.'); return; }
+  const pkg = document.getElementById('f-package').value;
+  const link = paymentLinks[pkg];
+  if (!link) { alert('Payment link not found. Please contact us directly.'); return; }
+  const url = new URL(link);
+  url.searchParams.set('first_name', fname);
+  url.searchParams.set('last_name', document.getElementById('f-lname').value.trim());
+  url.searchParams.set('email', email);
+  const phone = document.getElementById('f-phone').value.trim();
+  if (phone) url.searchParams.set('phone', phone);
+  window.location.href = url.toString();
+}
 </script>
 </body>
 </html>
