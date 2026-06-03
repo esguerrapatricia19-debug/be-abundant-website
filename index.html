@@ -949,16 +949,45 @@ function handleSubmit() {
   const fname = document.getElementById('f-fname').value.trim();
   const email = document.getElementById('f-email').value.trim();
   if (!fname || !email) { alert('Please fill in your name and email to continue.'); return; }
-  const pkg = document.getElementById('f-package').value;
+
+  const pkg  = document.getElementById('f-package').value;
   const link = paymentLinks[pkg];
   if (!link) { alert('Payment link not found. Please contact us directly.'); return; }
-  const url = new URL(link);
-  url.searchParams.set('first_name', fname);
-  url.searchParams.set('last_name', document.getElementById('f-lname').value.trim());
-  url.searchParams.set('email', email);
-  const phone = document.getElementById('f-phone').value.trim();
-  if (phone) url.searchParams.set('phone', phone);
-  window.location.href = url.toString();
+
+  const btn = document.querySelector('.pay-submit');
+  btn.textContent = 'Sending your info…';
+  btn.disabled = true;
+
+  const payload = {
+    firstName:    fname,
+    lastName:     document.getElementById('f-lname').value.trim(),
+    email:        email,
+    phone:        document.getElementById('f-phone').value.trim(),
+    businessName: document.getElementById('f-biz').value.trim(),
+    package:      pkg,
+    packageLabel: document.getElementById('f-package').options[document.getElementById('f-package').selectedIndex].text,
+    starterService: document.getElementById('f-starter-service').value,
+    notes:        document.getElementById('f-notes').value.trim(),
+    source:       'Be Abundant Website',
+    submittedAt:  new Date().toISOString()
+  };
+
+  const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/6i2HV4qUyFoG6Bq0dydB/webhook-trigger/307e645b-29bf-4c7c-b2db-0145a706aad1';
+
+  fetch(GHL_WEBHOOK, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .catch(err => console.warn('GHL webhook error (non-blocking):', err))
+  .finally(() => {
+    const url = new URL(link);
+    url.searchParams.set('first_name', fname);
+    url.searchParams.set('last_name', payload.lastName);
+    url.searchParams.set('email', email);
+    if (payload.phone) url.searchParams.set('phone', payload.phone);
+    window.location.href = url.toString();
+  });
 }
 </script>
 </body>
